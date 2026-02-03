@@ -4,7 +4,12 @@ import { sendNotFound } from '../app/helpers/spec'
 const app = async () => {
   try {
     console.info('Running app...')
-    const app = fastify({ ignoreTrailingSlash: true, caseSensitive: false })
+    const app = fastify({
+      routerOptions: {
+        ignoreTrailingSlash: true,
+        caseSensitive: false,
+      },
+    })
 
     await app.register(import('@fastify/cors'))
     await app.register(import('@fastify/compress'))
@@ -20,7 +25,7 @@ const app = async () => {
     })
 
     app.setErrorHandler((error, _request, reply) => {
-      if (error.statusCode === 429) {
+      if (error instanceof Error && 'statusCode' in error && error.statusCode === 429) {
         return reply.status(429).send({
           statusCode: 429,
           code: 'TOO_MANY_REQUESTS',

@@ -10,8 +10,8 @@ export const home = async (
 
   if (typeof q !== 'undefined' && q.trim() !== '') {
     const baseurl = `${request.protocol}://${request.hostname}`
-    return reply.redirect(301, `${baseurl}/search/?${qs.stringify(request.query)}`)
+    return reply.redirect(`${baseurl}/search/?${qs.stringify(request.query)}`, 301)
   }
 
-  return reply.redirect(302, 'https://github.com/sooluh/kodepos')
+  return reply.redirect('https://github.com/sooluh/kodepos')
 }

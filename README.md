@@ -28,7 +28,6 @@
    ```
 
 4. Run locally
-
    - Development mode
 
      ```bash
@@ -36,7 +35,6 @@
      ```
 
    - Production mode
-
      1. Build first
 
         ```bash
@@ -95,7 +93,7 @@ The fastest way to use it privately on PaaS available
 
 | Params | Description     | Required |
 | ------ | --------------- | :------: |
-| q      | Search keywords |    ✅     |
+| q      | Search keywords |    ✅    |
 
 #### Response
 
@@ -166,8 +164,8 @@ The fastest way to use it privately on PaaS available
 
 | Params    | Description        | Required |
 | --------- | ------------------ | :------: |
-| latitude  | Location latitude  |    ✅     |
-| longitude | Location longitude |    ✅     |
+| latitude  | Location latitude  |    ✅    |
+| longitude | Location longitude |    ✅    |
 
 #### Response
 
